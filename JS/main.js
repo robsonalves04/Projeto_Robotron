@@ -1,5 +1,6 @@
 const controle = document.querySelector("[data-controle]")
 const estatisticas = document.querySelectorAll("[ata-estatistica]")
+
 const pecas = {
     "bracos": {
         "forca": 29,
@@ -34,9 +35,10 @@ const pecas = {
     }
 }
 
+
 controle.forEach( (elemento) => {
-    elemento.addEventListener("click", (evento) => {
-        manipulaDados(evento.target.dataset.controle, evento.target.parentNode)
+    elemento.addEventListener('click', (evento) => {
+        manipulaDados(evento.target.textContent, evento.target.parentNode)
         atualizaEstatistica(evento.target.dataset.peca)
     })
 })
